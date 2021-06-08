@@ -1,1 +1,52 @@
-<p>Works!</p>
+<div fxLayout="row" fxLayoutAlign="center center" fxFill >
+  <mat-card fxFlex='50'>
+    <mat-card-header fxLayoutAlign="center">
+      <mat-card-title>
+        <h2>
+          Inicio de Sesión
+        </h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="column" fxLayoutGap="2rem">
+        <mat-form-field>
+          <label for="email"></label>
+          <input matInput
+                 type="email"
+                 id="email"
+                 [(ngModel)]="user.email"
+                 name="email"
+                 required
+                 placeholder='Correo Electrónico'>
+        </mat-form-field>
+        <mat-form-field>
+          <label for="password"></label>
+          <input matInput
+                 type="password"
+                 id="password"
+                 [(ngModel)]="user.password"
+                 name="password"
+                 required
+                 placeholder='Contraseña'>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>
+        <button mat-raised-button
+                color="accent"
+                type="submit"
+                (click)="login()"
+                fxFill>
+          Iniciar Sesión</button>
+      </div><div>
+        <button mat-button
+                color='accent'
+                type='submit'
+                (click)='newUser()'
+                fxFill>
+          Registrarse</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
