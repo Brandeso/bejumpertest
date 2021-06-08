@@ -1,1 +1,33 @@
-<p>Works!</p>
+<div class='main-container'>
+  <mat-toolbar color='primary' fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxFlex="15" fxLayoutAlign="space-between center">
+      <mat-icon>feed</mat-icon>
+      <h3>News Feed</h3>
+    </div>
+    <div>
+      <button mat-ico-button 
+      (click)='logout()'
+      fxLayout="row" fxLayoutAlign="space-between center">
+        <mat-icon>account_circle</mat-icon>
+        Cerrar Sesión
+      </button>
+    </div>
+  </mat-toolbar>
+  <div *ngFor='let section of articles' fxLayout="row" fxLayoutAlign="space-around center">
+    <div *ngFor='let new of section' class='mat-card-container' fxFlex='30'>
+      <mat-card>
+        <mat-card-content>
+          <img mat-card-image src="{{new.urlToImage}}" alt="{{new.title}}">
+          <mat-card-subtitle>{{new.title}}</mat-card-subtitle>
+          <p>{{new.description}}</p>
+          <button mat-raised-button
+            color='primary'
+            (click)='seeNews(new.url)'>
+            Ver Noticia
+          </button>
+        </mat-card-content>
+      </mat-card>
+      <br>
+    </div>
+  </div>
+</div>

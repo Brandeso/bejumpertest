@@ -36,6 +36,7 @@ import { LoginComponent } from 'src/screens/login/login.screen';
 import { NewsComponent } from 'src/screens/news/news.screen';
 import { SignupComponent } from 'src/screens/signup/signup.screen';
 import { AuthService } from 'src/services/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { AuthService } from 'src/services/auth.service';
     MatSlideToggleModule,
     MatPaginatorModule,
     MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [
     AuthService
